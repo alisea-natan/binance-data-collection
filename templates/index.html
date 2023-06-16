@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Candlestick and Pie Charts</title>
+    <script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
+</head>
+<body>
+    <div id="candlestick_chart"></div>
+    <div id="pie_chart"></div>
+
+    <script>
+        var candlestickData = {{ candlestick_data|safe }};
+        var pieData = {{ pie_data|safe }};
+
+        Plotly.newPlot("candlestick_chart", candlestickData.data, candlestickData.layout);
+        Plotly.newPlot("pie_chart", pieData.data, pieData.layout);
+    </script>
+</body>
+</html>
